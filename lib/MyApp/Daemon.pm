@@ -23,7 +23,7 @@ has '+log' => (traits => ['NoGetopt'],
 
 has interval => (traits => ['Getopt'], cmd_aliases => ['i'],
     documentation => 'interval between exec. unit : second',
-    is => 'ro', isa => 'Int', default => 1);
+    is => 'ro', isa => 'Int', default => 10);
 
 sub BUILD { my $self = shift;
     -d $self->pidbase or $self->pidbase->mkpath;
