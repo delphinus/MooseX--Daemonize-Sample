@@ -15,6 +15,8 @@ MooseX::Daemonize テストスクリプト
 ### 定期的に実行する
 
 	$ ./daemon -i 10 start
+	$ ./daemon stop
+	$ ./daemon restart
 
 10 秒ごとにカウンターを記録します。オプション `-i` に指定するのは実行間隔です。（デフォルト : 10 秒）
 
