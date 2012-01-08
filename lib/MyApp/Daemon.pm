@@ -1,13 +1,12 @@
 package MyApp::Daemon;
 use Moose;
-use MyApp::Log;
 
 extends 'MyApp';
 with 'MooseX::Daemonize';
 
 has '+log' => (default => sub {
         require MyApp::Log::File;
-        MyApp::Log::File->new;
+        return MyApp::Log::File->new;
     });
 
 has interval => (is => 'ro', isa => 'Int', default => 1);
@@ -15,6 +14,16 @@ has interval => (is => 'ro', isa => 'Int', default => 1);
 sub BUILD { my $self = shift;
     -d $self->pidbase or $self->pidbase->mkpath;
 }
+
+after start => sub { my $self = shift;
+    $self->is_daemon or return;
+    $self->log->start;
+    $self->run;
+};
+
+before stop => sub { my $self = shift;
+    $self->log->end;
+};
 
 override run => sub { my $self = shift;
     while (1) {

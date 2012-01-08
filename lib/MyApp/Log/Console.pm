@@ -6,4 +6,7 @@ sub say { my ($self, $msg) = @_;
     print "$msg\n";
 }
 
+sub start {}
+sub end {}
+
 __PACKAGE__->meta->make_immutable;
