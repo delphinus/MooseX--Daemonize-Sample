@@ -20,10 +20,10 @@ MooseX::Daemonize テストスクリプト
 
 ログファイルには以下のような記録が残ります。
 
-> [2012-01-08 21:20:26] ./daemon : START!
-> [2012-01-08 21:20:26] ./daemon : 1
-> [2012-01-08 21:20:36] ./daemon : 2
-> [2012-01-08 21:20:46] ./daemon : 3
+> [2012-01-08 21:20:26] ./daemon : START!  
+> [2012-01-08 21:20:26] ./daemon : 1  
+> [2012-01-08 21:20:36] ./daemon : 2  
+> [2012-01-08 21:20:46] ./daemon : 3  
 > [2012-01-08 21:20:50] ./daemon : END!
 
 [moosex-daemonize]: http://search.cpan.org/~stevan/MooseX-Daemonize-0.13/lib/MooseX/Daemonize.pm "MooseX::Daemonize - search.cpan.org"
